@@ -1,6 +1,17 @@
-const share = document.getElementById('Share');
-// let tog
+
+let tog = true;
 
 function shareLinks(){
-    share.classList.add('show');
+    if(tog){
+        const share = document.getElementById('Share');
+
+        share.classList.add('show');
+        tog= false;
+    } else{
+        const quake = document.getElementById('Share');
+
+        quake.classList.remove('show');
+        tog= true;
+    }
+    
 }
