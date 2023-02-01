@@ -84,10 +84,11 @@ article > p{
 }
 
 .share{
-    background: var(--GrayishBlue);
+    background: var(--LightGrayishBlue);
     border-radius: 50%;
     padding: .5rem;
     cursor: pointer;
+    color: var(--VeryDarkGrayishBlue);
 }
 
 .share-links{
@@ -130,4 +131,10 @@ article > p{
 /* To reveal the hidden share div tag */
 .show{
     display: flex;
+}
+
+/* to change css properties of the share icon onclick */
+.reveal{
+    background: var(--VeryDarkGrayishBlue);
+    color: var(--white);
 }
