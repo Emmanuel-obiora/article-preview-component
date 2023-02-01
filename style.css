@@ -24,18 +24,18 @@ body{
 
 .page-content{
     display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
     margin: auto auto 0 auto;
     width: 800px;
     height: 300px;
     background: var(--white);
+    border-radius: 10px;
 }
 
 .article-image > img{
     display: flex;
     height: 100%;
     width: 300px;
+    border-radius: 10px 0 0 10px;
 }
 
 article{
@@ -61,6 +61,7 @@ article > p{
     align-items: center;
     justify-content: space-between;
     position: relative;
+    padding: 0 2rem;
 }
 
 .author-info{
@@ -74,8 +75,7 @@ article > p{
 }
 
 .info > h2{
-    font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     color: var(--VeryDarkGrayishBlue);
 }
 
@@ -98,25 +98,34 @@ article > p{
     justify-content: center;
     padding: .6rem 2rem;
     border-radius: 8px;
-    color: var(--LightGrayishBlue);
+    color: var(--GrayishBlue);
     background: var(--VeryDarkGrayishBlue);
-    gap: .4rem;
-    right: -5rem;
+    gap: .8rem;
+    right: -3.8rem;
     bottom: 4rem;
-    font-size: 16px;
 }
 
 .share-links::after{
     content: "";
-    background: var(--VeryDarkGrayishBlue);
+    background: transparent;
     height: 0;
     width: 0;
-    top: 2.6rem;
+    top: 2.4rem;
     position: absolute;
-    border-right: 10px solid white;
-    border-left: 10px solid white;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
     border-top: 10px solid var(--VeryDarkGrayishBlue);
     
+}
+
+.capitalize{
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: 11px;
+}
+
+.clickables{
+    cursor: pointer;
 }
 
 .attribution { 
@@ -137,4 +146,83 @@ article > p{
 .reveal{
     background: var(--VeryDarkGrayishBlue);
     color: var(--white);
+}
+
+/* =====setting up responsiveness for tablet devices===== */
+@media screen and (max-width: 64rem){
+    .page-content{
+        width: 700px;
+    }
+
+    .page-right{
+        display: grid;
+        padding-bottom: 1rem;
+    }
+
+    article > h1{
+        font-size: 20px;
+    }
+
+    article > p{
+        font-size: 16px;
+    }
+}
+
+/* =====Setting up responsiveness for mobile devices=== */
+@media screen and (max-width: 37.5rem){
+    .page-content{
+        flex-direction: column;
+        width: 310px;
+        height: auto;
+    }
+
+    .article-image > img{
+        display: flex;
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    article{
+        row-gap: .6rem;
+    }
+
+    article > h1{
+        font-size: 16px;
+    }
+
+    article > p{
+        font-size: 13px;
+    }
+
+    .author{
+        margin: 0 0 1rem 0;
+    }
+
+    .share{
+        z-index: 1;
+    }
+
+    .share-links{
+        position: absolute;
+        /* display: flex; */
+        justify-content: left;
+        padding: 1.5rem 2rem;
+        border-radius: 0 0 10px 10px;
+        gap: 1rem;
+        right: 0;
+        width: 100%;
+        bottom: -1rem;
+    }
+
+    .share-links::after{
+        display: none;
+    }
+
+    /* to change css properties of the share icon onclick */
+    .reveal{
+        background: var(--DesaturatedDarkBlue);
+        color: var(--white);
+    }
 }
